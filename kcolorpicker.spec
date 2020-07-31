@@ -7,7 +7,7 @@ Version: 0.1.4
 Release: 1%{?dist}
 
 License: LGPLv3+
-Summary: Tool button control with color popup menu
+Summary: QToolButton control with color popup menu
 URL: https://github.com/ksnip/%{appname}
 Source0: %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
 
@@ -16,9 +16,10 @@ BuildRequires: cmake(Qt5Gui)
 
 BuildRequires: ninja-build
 BuildRequires: gcc-c++
+BuildRequires: cmake
 
 %description
-QToolButton with color popup menu with lets you select a color.
+QToolButton with color popup menu which lets you select a color.
 
 The popup features a color dialog button which can be used to add
 custom colors to the popup menu.

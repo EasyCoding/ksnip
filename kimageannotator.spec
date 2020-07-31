@@ -7,7 +7,7 @@ Version: 0.3.2
 Release: 1%{?dist}
 
 License: LGPLv3+
-Summary: Tool for annotating images
+Summary: Library and a tool for annotating images
 URL: https://github.com/ksnip/%{appname}
 Source0: %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
 
@@ -20,9 +20,10 @@ BuildRequires: cmake(Qt5Svg)
 
 BuildRequires: ninja-build
 BuildRequires: gcc-c++
+BuildRequires: cmake
 
 %description
-Special tool for annotating images. Part of KSnip project.
+Library and a tool for annotating images. Part of KSnip project.
 
 %package devel
 Summary: Development files for %{name}

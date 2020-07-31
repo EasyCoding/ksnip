@@ -27,6 +27,7 @@ BuildRequires: desktop-file-utils
 BuildRequires: libappstream-glib
 BuildRequires: ninja-build
 BuildRequires: gcc-c++
+BuildRequires: cmake
 
 Requires: hicolor-icon-theme
 
@@ -52,7 +53,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %find_lang %{name} --with-qt
 
 %files -f %{name}.lang
-%doc CHANGELOG.md CODINGSTYLE README.md
+%doc CHANGELOG.md README.md
 %license LICENSE
 %{_bindir}/%{name}
 %{_datadir}/applications/*.desktop
