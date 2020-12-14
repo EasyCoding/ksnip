@@ -3,7 +3,7 @@
 %global libname lib%{appname}
 
 Name: kimageannotator
-Version: 0.3.2
+Version: 0.4.0
 Release: 1%{?dist}
 
 License: LGPLv3+
@@ -57,5 +57,8 @@ Requires: %{name}%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
 %{_libdir}/%{libname}.so
 
 %changelog
+* Mon Dec 14 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 0.4.0-1
+- Updated to version 0.4.0.
+
 * Fri Jul 31 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 0.3.2-1
 - Initial SPEC release.
