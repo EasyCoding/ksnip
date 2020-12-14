@@ -1,0 +1,40 @@
+From d2b191fc0864885cf179b990ee47cbba69799c71 Mon Sep 17 00:00:00 2001
+From: Vitaly Zaitsev <vitaly@easycoding.org>
+Date: Thu, 5 Nov 2020 17:57:50 +0100
+Subject: [PATCH] Added a workaround to Wayland issues.
+
+Signed-off-by: Vitaly Zaitsev <vitaly@easycoding.org>
+---
+ src/main.cpp | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+
+diff --git a/src/main.cpp b/src/main.cpp
+index 13c4392..e896e1a 100644
+--- a/src/main.cpp
++++ b/src/main.cpp
+@@ -27,8 +27,25 @@
+ #include "BuildConfig.h"
+ #include "src/bootstrapper/BootstrapperFactory.h"
+ 
++#ifdef Q_OS_LINUX
++void wayland_hacks()
++{
++    // Workaround to https://github.com/ksnip/ksnip/issues/416
++    QByteArray currentDesktop = qgetenv("XDG_CURRENT_DESKTOP").toLower();
++    QByteArray sessionDesktop = qgetenv("XDG_SESSION_DESKTOP").toLower();
++    QByteArray sessionType = qgetenv("XDG_SESSION_TYPE").toLower();
++    if (sessionType.contains("wayland") && (currentDesktop.contains("gnome") || sessionDesktop.contains("gnome")))
++    {
++        qputenv("QT_QPA_PLATFORM", "xcb");
++    }
++}
++#endif
++
+ int main(int argc, char** argv)
+ {
++#ifdef Q_OS_LINUX
++    wayland_hacks();
++#endif
+     QApplication app(argc, argv);
+     app.setAttribute(Qt::AA_UseHighDpiPixmaps);
+ 

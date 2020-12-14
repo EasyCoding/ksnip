@@ -2,12 +2,15 @@
 
 Name: ksnip
 Version: 1.7.3
-Release: 1%{?dist}
+Release: 2%{?dist}
 
 License: GPLv2+
 Summary: Qt based cross-platform screenshot tool
 URL: https://github.com/%{name}/%{name}
 Source0: %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
+
+# Workaround to Wayland issues: https://github.com/ksnip/ksnip/pull/457
+Patch100: %{name}-wayland-workaround.patch
 
 BuildRequires: cmake(Qt5LinguistTools)
 BuildRequires: cmake(kImageAnnotator)
@@ -61,5 +64,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_metainfodir}/*.appdata.xml
 
 %changelog
+* Fri Nov 06 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 1.7.3-2
+- Added patch with workaround to Wayland issues.
+
 * Fri Jul 31 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 1.7.3-1
 - Initial SPEC release.
