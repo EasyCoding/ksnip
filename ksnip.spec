@@ -1,8 +1,8 @@
 %undefine __cmake_in_source_build
 
 Name: ksnip
-Version: 1.7.3
-Release: 2%{?dist}
+Version: 1.8.0
+Release: 1%{?dist}
 
 License: GPLv2+
 Summary: Qt based cross-platform screenshot tool
@@ -64,6 +64,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_metainfodir}/*.appdata.xml
 
 %changelog
+* Mon Dec 14 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 1.8.0-1
+- Updated to version 1.8.0.
+
 * Fri Nov 06 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 1.7.3-2
 - Added patch with workaround to Wayland issues.
 
