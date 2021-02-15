@@ -9,7 +9,7 @@ Signed-off-by: Vitaly Zaitsev <vitaly@easycoding.org>
  1 file changed, 17 insertions(+)
 
 diff --git a/src/main.cpp b/src/main.cpp
-index 13c4392..e896e1a 100644
+index eac7144..4c8a79c 100644
 --- a/src/main.cpp
 +++ b/src/main.cpp
 @@ -27,8 +27,25 @@
@@ -35,6 +35,6 @@ index 13c4392..e896e1a 100644
 +#ifdef Q_OS_LINUX
 +    wayland_hacks();
 +#endif
-     QApplication app(argc, argv);
-     app.setAttribute(Qt::AA_UseHighDpiPixmaps);
+ 	QApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
  
+     QApplication app(argc, argv);
