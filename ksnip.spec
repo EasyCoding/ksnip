@@ -1,8 +1,8 @@
 %undefine __cmake_in_source_build
 
 Name: ksnip
-Version: 1.8.0
-Release: 2%{?dist}
+Version: 1.8.1
+Release: 1%{?dist}
 
 License: GPLv2+
 Summary: Qt based cross-platform screenshot tool
@@ -64,6 +64,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_metainfodir}/*.appdata.xml
 
 %changelog
+* Mon Feb 15 2021 Vitaly Zaitsev <vitaly@easycoding.org> - 1.8.1-1
+- Updated to version 1.8.1.
+
 * Tue Jan 26 2021 Fedora Release Engineering <releng@fedoraproject.org> - 1.8.0-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
 
